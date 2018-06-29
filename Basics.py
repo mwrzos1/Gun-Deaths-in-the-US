@@ -1,7 +1,6 @@
 
-# coding: utf-8
 
-# In[9]:
+#import file and display the first 5 rows
 
 
 import csv
