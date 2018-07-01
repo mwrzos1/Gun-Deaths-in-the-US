@@ -27,3 +27,38 @@ for element in years:
     else:
         year_counts[element] = 1
 print(year_counts)
+
+#  list comprehension to get result for year and month
+import datetime
+dates = [datetime.datetime (year=int(row[1]), month=int(row[2]), day=1) for row in data]
+print(dates[0:5])
+
+
+# count how many times each unique date occurs in dates
+date_counts = {}
+for date in dates:
+    if date in date_counts:
+        date_counts[date] = date_counts[date]+1
+    else:
+        date_counts[date]=1
+print(date_counts)
+
+#count how many times each unique gender appears in sex
+sex = [row[5] for row in data]
+sex_counts ={}
+for gender in sex:
+    if gender in sex_counts:
+        sex_counts[gender]= sex_counts[gender]+1
+    else:
+        sex_counts[gender] = 1
+print(sex_counts)
+
+#count how many times each unique ethnicity appears in race
+race = [row[7] for row in data]
+race_counts={}
+for ethnicity in race:
+    if ethnicity in race_counts:
+        race_counts[ethnicity]= race_counts[ethnicity]+1
+    else:
+        race_counts[ethnicity]=1
+print(race_counts)
