@@ -69,3 +69,17 @@ file = open("census.csv", "r")
 csv_reader = csv.reader(file)
 census = list(csv_reader)
 print(census)
+
+
+#calculate rate of gun death per 100000 in each race
+mapping = {}
+mapping = {"Asian/Pacific Islander":15834141,
+           "Black":40250635,
+           "Hispanic":44618105,
+           "Native American/Native Alaskan":3739506,
+           "White": 197318956}
+race_per_hundredk ={}
+for key,value in race_counts.items():
+    race_per_hundredk[key]= (value/mapping[key])*100000
+print(race_per_hundredk)
+
