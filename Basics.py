@@ -62,3 +62,10 @@ for ethnicity in race:
     else:
         race_counts[ethnicity]=1
 print(race_counts)
+
+#import file census.csv and convert to list of lists
+import csv
+file = open("census.csv", "r")
+csv_reader = csv.reader(file)
+census = list(csv_reader)
+print(census)
