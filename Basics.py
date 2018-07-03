@@ -83,3 +83,19 @@ for key,value in race_counts.items():
     race_per_hundredk[key]= (value/mapping[key])*100000
 print(race_per_hundredk)
 
+
+#calculate homicide rate per 100000 in each race
+intents = [row[3] for row in data]
+races = [row[7] for row in data]
+homicide_race_counts ={}
+for i, race in enumerate(races):
+    if intents[i]=="Homicide":
+        if race not in homicide_race_counts:
+            homicide_race_counts[race]=1
+        else:
+            homicide_race_counts[race]= homicide_race_counts[race]+1
+print((homicide_race_counts))
+homicide_race_per_hundredk = {}
+for key,value in homicide_race_counts.items():
+     homicide_race_per_hundredk[key] = (value / mapping[key]) *100000
+print(homicide_race_per_hundredk)
